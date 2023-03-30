@@ -1,4 +1,5 @@
 **Project LISP Lights-Out**
+
 **Name: Godwill Afolabi**
 
 The goal of this project is to program the game "Lights-Out" in the LISP programming language. On a board with a grid of lights that can be turned on or off, the game is played. The objective of the game is to toggle all of the lights on the board off.
