@@ -18,3 +18,9 @@
         (t (let ((current-state (nth index board))) ; Get the current state of the cell.
              (setf (nth index board) (if (eq current-state 'x) 'o 'x))) ; Toggle the state of the cell.
              board)))) ; Return the modified board.
+
+(defun is-light-out (cell)
+  (eq cell '0))  ;; Returns `t` if `cell` is the symbol `0`, and `nil` otherwise.
+
+(defun all-lights-out (board)
+  (every #'is-light-out board)) ;; Returns `t` if all cells in `board` are '0', and `nil` otherwise.
