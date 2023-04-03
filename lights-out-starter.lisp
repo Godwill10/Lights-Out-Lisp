@@ -16,7 +16,7 @@
   (cond ((< index 0) board) ; If the index is negative, return the original board.
         ((>= index (length board)) board) ; If the index is greater than or equal to the length of the board, return the original board.
         (t (let ((current-state (nth index board))) ; Get the current state of the cell.
-             (setf (nth index board) (if (eq current-state 'x) 'o 'x))) ; Toggle the state of the cell.
+             (setf (nth index board) (if (eq current-state '1) '0 '1))) ; Toggle the state of the cell.
              board)))) ; Return the modified board.
 
 (defun is-light-out (cell)
