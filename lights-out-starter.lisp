@@ -12,15 +12,10 @@
       (print-board (rest board)))
 )
 
-(defun toggle-light (board index)
-  (cond ((< index 0) board) ; If the index is negative, return the original board.
-        ((>= index (length board)) board) ; If the index is greater than or equal to the length of the board, return the original board.
-        (t (let ((current-state (nth index board))) ; Get the current state of the cell.
-             (setf (nth index board) (if (eq current-state '1) '0 '1))) ; Toggle the state of the cell.
-             board)))) ; Return the modified board.
 
-(defun is-light-out (cell)
-  (eq cell '0))  ;; Returns `t` if `cell` is the symbol `0`, and `nil` otherwise.
+(defun toggle-light (board row col)
+  (if (= row 0)  ; if we are at the first row of the board 
+      (cons (toggle-row (car board) col) (cdr board)) ; toggle the light at the specified column in the first row
+      (cons (car board); otherwise, recursively toggle the light in the remaining rows of the board
+            (toggle-light (cdr board) (- row 1) col))))
 
-(defun all-lights-out (board)
-  (every #'is-light-out board)) ;; Returns `t` if all cells in `board` are '0', and `nil` otherwise.
