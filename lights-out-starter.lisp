@@ -25,3 +25,10 @@
       (cons (car row); otherwise, recursively toggle the light in the remaining columns of the row
             (toggle-row (cdr row) (- col 1)))))
 
+(defun all-lights-out-p (board)
+  ; If the board is empty, all lights are out and return true.
+  (cond
+    ((null board) t)
+    ((or (not (listp board)) (not (integerp (car board)))) nil)  ; If the board is not a list or its first element is not an integer, return nil.
+    ((zerop (car board)) (all-lights-out-p (cdr board))) ; If the first element of the board is zero, check the rest of the board.
+    (t nil))) ; If none of the above conditions match, return false
