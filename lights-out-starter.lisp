@@ -19,3 +19,9 @@
       (cons (car board); otherwise, recursively toggle the light in the remaining rows of the board
             (toggle-light (cdr board) (- row 1) col))))
 
+(defun toggle-row (row col)
+  (if (= col 0)  ; if we are at the specified column in the row
+      (if (= (car row) 0) 1 0) ; toggle the light
+      (cons (car row); otherwise, recursively toggle the light in the remaining columns of the row
+            (toggle-row (cdr row) (- col 1)))))
+
