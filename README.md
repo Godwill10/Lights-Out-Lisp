@@ -13,8 +13,5 @@ In the initial iteration of our project, there are three crucial features that l
     toggle-light
         The toggle-light function changes the state of a specific light on a board from on to off or vice versa by taking a board and its coordinates as input. The revised board will be returned as output by the function.  
 
-    all-lights-out
+    all-lights-out-p
         The program is able to verify each light and tell if all the lights are on or off.
-
-    is-light-out
-        The program is able to verify if a light is on or off.
