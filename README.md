@@ -26,6 +26,4 @@ In the initial iteration of our project, there are three crucial features that l
 
     To toggle a light on the board, you can call the toggle-light function with tree arguments: the board, the index of the row (0 to 2), and the index of the column (0 to 2). The function will return a new list representing the updated board state with the specified light toggled.
 
-    To toggle an entire row on the board, you can call the toggle-row function with two arguments: the index of the row to toggle (0 to 2), and the current board state represented as a list of 9 elements. The function will return a new list representing the updated board state with the specified row toggled.
-
     You can use the all-lights-out function to determine if all of the lights on the board are currently off. The function takes a single argument representing the current board state, and returns T if all of the lights are off, and NIL otherwise.
