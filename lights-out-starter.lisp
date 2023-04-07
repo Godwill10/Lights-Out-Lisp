@@ -35,9 +35,9 @@
 
 (defun get-input (prompt)
   (format t prompt)
-  (let ((user-input (read-line)))
+  (let ((user-input (read)))
     (if (string= user-input "") ;; if user input is empty, ask again
         (get-input prompt)
-          (if (and user-num (<= 0 user-num 1)) ;; if input is an integer between 0 and 1, return it
+          (if (and user-num (<= 1 user-num 9)) ;; if input is an integer between 1 and 9, return it
               user-num
-              (get-input "Input must be either 0 or 1. Enter again: ")))))) ;; ask again if input is invalid
+              (get-input "Input must be an integer between 1 and 9. Enter again: ")))))) ;; ask again if input is invalid
