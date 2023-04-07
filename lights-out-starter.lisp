@@ -32,3 +32,12 @@
     ((or (not (listp board)) (not (integerp (car board)))) nil)  ; If the board is not a list or its first element is not an integer, return nil.
     ((zerop (car board)) (all-lights-out-p (cdr board))) ; If the first element of the board is zero, check the rest of the board.
     (t nil))) ; If none of the above conditions match, return false
+
+(defun get-input (prompt)
+  (format t prompt)
+  (let ((user-input (read-line)))
+    (if (string= user-input "") ;; if user input is empty, ask again
+        (get-input prompt)
+          (if (and user-num (<= 0 user-num 1)) ;; if input is an integer between 0 and 1, return it
+              user-num
+              (get-input "Input must be either 0 or 1. Enter again: ")))))) ;; ask again if input is invalid
