@@ -11,19 +11,24 @@ The goal of this project is to program the game "Lights-Out" in the LISP program
 First iteration
 In the initial iteration of our project, there are three crucial features that let us print the board, turn on one light at a time, and check to see if all the lights are off. The logic of the game will be built upon these functions.
 
-    print-board
-        A board is input into the print-board function, which outputs it to the console. The board is shown as a two-dimensional list, with each member representing an off or on light, respectively, as a 0 or 1. The function will show the board to the console in a format that is easy to interpret visually, like a grid of squares.
+    print-board: Takes a board as input and prints it in a 3x3 format.
 
-    toggle-light
-        The toggle-light function changes the state of a specific light on a board from on to off or vice versa by taking a board and its coordinates as input. The revised board will be returned as output by the function.  
+    get-input: Takes a prompt as input and returns user input if it is a valid integer between 1 and 9.
 
-    all-lights-out-p
-        The program is able to verify each light and tell if all the lights are on or off.
+    turn-off-light: Takes a location and board as input and returns a new board with the light at the 
+    specified location turned off.
+
+    all-lights-off-p: Takes a board as input and returns T if all the lights on the board are off (0), else returns NIL.
+
+    start-lights-out-game: Starts the game by initializing the board, displaying a welcome message, and calling the play-game function.
 
 **How to use/run**
 
-    To use this program, you can call the print-board function with a list of 9 elements representing the state of the lights on a 3x3 board. The elements of the list should be either 1 if the corresponding light is on, or 0 if the light is off. The print-board function will display the current state of the board in the console.
+How to run the "Lights Out" game implementation in Lisp:
 
-    To toggle a light on the board, you can call the toggle-light function with tree arguments: the board, the index of the row (0 to 2), and the index of the column (0 to 2). The function will return a new list representing the updated board state with the specified light toggled.
-
-    You can use the all-lights-out function to determine if all of the lights on the board are currently off. The function takes a single argument representing the current board state, and returns T if all of the lights are off, and NIL otherwise.
+1. Open a Lisp environment.
+2. Load the "lights-out-starter.lisp" file using the LOAD command.
+3. Call the start-lights-out-game function in the Lisp environment to start the game.
+4. Follow the prompts to enter the location of the light you want to turn off.
+5. Continue playing until all the lights on the board are turned off.
+6. The game will end and display the number of moves taken to complete the game.
