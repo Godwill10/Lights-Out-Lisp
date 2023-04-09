@@ -12,27 +12,7 @@
       (print-board (rest board)))
 )
 
-
-(defun toggle-light (board row col)
-  (if (= row 0)  ; if we are at the first row of the board 
-      (cons (toggle-row (car board) col) (cdr board)) ; toggle the light at the specified column in the first row
-      (cons (car board); otherwise, recursively toggle the light in the remaining rows of the board
-            (toggle-light (cdr board) (- row 1) col))))
-
-(defun toggle-row (row col)
-  (if (= col 0)  ; if we are at the specified column in the row
-      (if (= (car row) 0) 1 0) ; toggle the light
-      (cons (car row); otherwise, recursively toggle the light in the remaining columns of the row
-            (toggle-row (cdr row) (- col 1)))))
-
-(defun all-lights-out-p (board)
-  ; If the board is empty, all lights are out and return true.
-  (cond
-    ((null board) t)
-    ((or (not (listp board)) (not (integerp (car board)))) nil)  ; If the board is not a list or its first element is not an integer, return nil.
-    ((zerop (car board)) (all-lights-out-p (cdr board))) ; If the first element of the board is zero, check the rest of the board.
-    (t nil))) ; If none of the above conditions match, return false
-
+;; Takes input from the user
 (defun get-input (prompt)
   (format t prompt)
   (let ((user-input (read)))
@@ -41,3 +21,22 @@
           (if (and user-num (<= 1 user-num 9)) ;; if input is an integer between 1 and 9, return it
               user-num
               (get-input "Input must be an integer between 1 and 9. Enter again: ")))))) ;; ask again if input is invalid
+
+
+ ;; Turn off the light on the board at the specified location.
+(defun turn-off-light (location board)
+  (cond
+    ((null board) nil)  ; If the board is empty, return nil.
+    ((eql (car board) location)  ; If the first element is the location, return the rest of the board.
+     (cdr board))
+    (t  ; Otherwise, prepend the first element to the result of the recursive call on the rest of the board.
+     (cons (car board) (turn-off-light location (cdr board))))))
+
+ ;; Returns T if all the lights on the board are off (0), else returns NIL.
+(defun all-lights-off-p (board)
+  (cond
+    ((null board) T)
+    ((= (car board) 0) (all-lights-off-p (cdr board)))
+    (t NIL)
+  )
+)
