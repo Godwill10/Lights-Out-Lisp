@@ -14,18 +14,23 @@ In the initial iteration of our project, there are three crucial features that l
     print-board
         A board is input into the print-board function, which outputs it to the console. The board is shown as a two-dimensional list, with each member representing an off or on light, respectively, as a 0 or 1. The function will show the board to the console in a format that is easy to interpret visually, like a grid of squares.
 
-    toggle-light
-        The toggle-light function changes the state of a specific light on a board from on to off or vice versa by taking a board and its coordinates as input. The revised board will be returned as output by the function.  
+    turn-off-light
+        A function that takes an integer parameter representing a location on a light board and turns off the light at that location. It returns a new board with the specified light turned off.
 
-    all-lights-out-p
-        The program is able to verify each light and tell if all the lights are on or off.
+    all-lights-off-p
+        A function that takes a list parameter representing a light board and returns a boolean value indicating whether all the lights on the board are off (true) or not (false). The function works by checking each element of the list to see if it is equal to 0, indicating that the light is off. It returns true if all the elements are 0, and false otherwise.
+
+    get-input 
+        Takes an integer from the user.
 
 **How to use/run**
 
-    To use this program, you can call the print-board function with a list of 9 elements representing the state of the lights on a 3x3 board. The elements of the list should be either 1 if the corresponding light is on, or 0 if the light is off. The print-board function will display the current state of the board in the console.
+    To run this code, you will need to have a Lisp interpreter or environment installed on your system. Once you have that, you can open the Lisp file in your environment or interpreter and load it.
 
-    To toggle a light on the board, you can call the toggle-light function with tree arguments: the board, the index of the row (0 to 2), and the index of the column (0 to 2). The function will return a new list representing the updated board state with the specified light toggled.
+After loading the file, you can call the functions defined in the file from the Lisp REPL (read-eval-print loop). For example, you can call the print-board function by passing a list representing the game board as an argument.
 
-    To toggle an entire row on the board, you can call the toggle-row function with two arguments: the index of the row to toggle (0 to 2), and the current board state represented as a list of 9 elements. The function will return a new list representing the updated board state with the specified row toggled.
+To get input from the user, you can call the get-input function, which will prompt the user to enter an integer between 1 and 9. The function will continue to prompt the user until a valid input is provided.
 
-    You can use the all-lights-out function to determine if all of the lights on the board are currently off. The function takes a single argument representing the current board state, and returns T if all of the lights are off, and NIL otherwise.
+To turn off a light on the game board, you can call the turn-off-light function, passing the location of the light to be turned off as well as the game board.
+
+Finally, to check if all the lights on the board are off, you can call the all-lights-off-p function, passing the game board as an argument. The function will return T if all lights are off (0), and NIL otherwise.
