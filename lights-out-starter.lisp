@@ -41,16 +41,3 @@
   )
 )
 
-;; starts the game
-(defun start-lights-out-game ()
-  (let ((board '(1 0 0 0 1 1 1 0 1))
-        (moves 0))
-    (format t "Welcome to Lights Out! The goal of the game is to turn off all the lights.~%")
-    (defun play-game (board moves)
-      (when (not (all-lights-off-p board))
-        (format t "Current board state:~%")
-        (print-board board)
-        (let ((input (get-input "Enter the location of the light you want to turn off (1-9): ")))
-          (play-game (turn-off-light input board) (+ moves 1)))))
-    (play-game board moves)
-    (format t "Congratulations! You won in ~a moves.~%" moves)))
