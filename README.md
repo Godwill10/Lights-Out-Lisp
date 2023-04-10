@@ -22,6 +22,8 @@ In the initial iteration of our project, there are three crucial features that l
 
     start-lights-out-game: Starts the game by initializing the board, displaying a welcome message, and calling the play-game function.
 
+    play-lights-out-with-computer: When called, sets a board and allow the user to play with an AI (computer).
+
 **How to use/run**
 
 How to run the "Lights Out" game implementation in Lisp:
@@ -29,6 +31,10 @@ How to run the "Lights Out" game implementation in Lisp:
 1. Open a Lisp environment.
 2. Load the "lights-out-starter.lisp" file using the LOAD command.
 3. Call the start-lights-out-game function in the Lisp environment to start the game.
-4. Follow the prompts to enter the location of the light you want to turn off.
-5. Continue playing until all the lights on the board are turned off.
-6. The game will end and display the number of moves taken to complete the game.
+    a. Follow the prompts to enter the location of the light you want to turn off.
+    b. Continue playing until all the lights on the board are turned off.
+    c. The game will end and display the number of moves taken to complete the game.
+4. Call the play-lights-out-with-computer function in the Lisp environment to start the game.
+    a. Follow the prompts to enter the location of the light you want to turn off.
+    b. Continue playing until all the lights on the board are turned off.
+    c. The game will end and display the number of moves taken to complete the game.
