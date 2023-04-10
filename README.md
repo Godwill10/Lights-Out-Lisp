@@ -31,10 +31,10 @@ How to run the "Lights Out" game implementation in Lisp:
 1. Open a Lisp environment.
 2. Load the "lights-out-starter.lisp" file using the LOAD command.
 3. Call the start-lights-out-game function in the Lisp environment to start the game.
-    a. Follow the prompts to enter the location of the light you want to turn off.
-    b. Continue playing until all the lights on the board are turned off.
-    c. The game will end and display the number of moves taken to complete the game.
+    1. Follow the prompts to enter the location of the light you want to turn off.
+    2. Continue playing until all the lights on the board are turned off.
+    3. The game will end and display the number of moves taken to complete the game.
 4. Call the play-lights-out-with-computer function in the Lisp environment to start the game.
-    a. Follow the prompts to enter the location of the light you want to turn off.
-    b. Continue playing until all the lights on the board are turned off.
-    c. The game will end and display the number of moves taken to complete the game.
+    1. Follow the prompts to enter the location of the light you want to turn off.
+    2. Continue playing until all the lights on the board are turned off.
+    3. The game will end and display the number of moves taken to complete the game.
