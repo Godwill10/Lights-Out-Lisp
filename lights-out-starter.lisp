@@ -87,5 +87,5 @@
              (format t "Congratulations! You won in ~a moves.~%" moves))))
 
     ;; Calls `play-game` with the initial `board` state and `moves`
-    (play-game board moves 'human)
+    (play-game board moves)
     (format t "Congratulations! You won in ~a moves.~%" moves)))
